@@ -10,7 +10,7 @@ def main():
     for url in sys.argv[1:]:
         os.system('clear')
         req = urllib2.urlopen(url)
-        for chunk in req.read(16 * 1024):
+        for chunk in req.read():
             for char in chunk:
                 sys.stdout.write(char)
                 time.sleep(1.0 / 1500.0)
